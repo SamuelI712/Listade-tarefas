@@ -5,15 +5,7 @@
         $custo  = $_POST["custo"];
 		$t_id = $_POST["id"];
         $data_lim   = utf8_decode($_POST["data_limite"]);
-        
-		
-		//verificar se o nome já existe na tabela
-		
-		
-		
-		
-		
-		
+     
         // Objeto para alterar
         $alterar = "UPDATE tarefas ";
         $alterar .= "SET ";
@@ -23,10 +15,10 @@
         $alterar .= "WHERE id = {$t_id} ";
         $operacao_alterar = mysqli_query($conecta, $alterar);
         if(!$operacao_alterar) {
-            echo("Erro o nome da tarefa já existe");   
+            echo("Erro,já existe uma tarefa com o mesmo nome");   
 			 header("location:index.php"); 
         } else {
-            echo "dados alterados com sucesso";
+            echo "Dados alterados com sucesso";
             header("location:index.php");   
         }
         

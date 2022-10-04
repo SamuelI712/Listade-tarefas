@@ -139,7 +139,7 @@
 
             updateOrder(selectedData);
 
-        }
+        } 
 
     });
 

@@ -13,7 +13,7 @@
         if(!$operacao_remover) {
             die("Erro ao remover");   
         } else {
-            echo "dados alterados com sucesso";
+            echo "Dados alterados com sucesso";
             header("location:index.php");   
         }
         

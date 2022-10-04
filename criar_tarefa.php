@@ -25,11 +25,11 @@
         
         $operacao_inserir = mysqli_query($conecta,$inserir);
         if(!$operacao_inserir) {
-            echo("Erro tentativa de inserir tarefa com nome duplicado");
+            echo("Erro, tentativa de inserir tarefa com nome duplicado");
 			 header("location:index.php");
         }  
 		 else {
-            echo "dados inseridos com sucesso";
+            echo "Dados inseridos com sucesso";
             header("location:index.php");   
         }
     }
