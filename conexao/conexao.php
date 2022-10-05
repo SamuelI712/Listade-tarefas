@@ -1,10 +1,10 @@
 ﻿<?php
 //abrir conexão
 $servidor="localhost";
-$usuario="root";
-$senha="";
-$banco="sistema";
-$porta="3308";
+$usuario="";//usuario
+$senha="";//senha
+$banco="sistema";//banco de dados
+$porta="3308";//porta  Mysql
 $conecta=mysqli_connect($servidor,$usuario,$senha,$banco,$porta);
 //testar a conexão
 if(mysqli_connect_errno()){
