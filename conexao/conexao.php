@@ -1,7 +1,7 @@
 ﻿<?php
 //abrir conexão
 $servidor="localhost";
-$usuario="";//usuario
+$usuario="root";//usuario
 $senha="";//senha
 $banco="sistema";//banco de dados
 $porta="3308";//porta  Mysql
