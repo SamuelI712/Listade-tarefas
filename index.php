@@ -136,7 +136,7 @@
                 selectedData.push($(this).attr("id"));
 
             });
-
+			
             updateOrder(selectedData);
 
         } 
