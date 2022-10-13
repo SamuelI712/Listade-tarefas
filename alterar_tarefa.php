@@ -1,11 +1,13 @@
 <?php require_once("conexao/conexao.php"); ?>
 <?php
+
     if( isset($_POST["nome"]) ) {
         $nome       = utf8_decode($_POST["nome"]);
         $custo  = $_POST["custo"];
 		$t_id = $_POST["id"];
         $data_lim   = utf8_decode($_POST["data_limite"]);
-     
+        $mod_custo=str_replace(',', '.', $custo);
+		$custo=$mod_custo;
         // Objeto para alterar
         $alterar = "UPDATE tarefas ";
         $alterar .= "SET ";
@@ -15,11 +17,12 @@
         $alterar .= "WHERE id = {$t_id} ";
         $operacao_alterar = mysqli_query($conecta, $alterar);
         if(!$operacao_alterar) {
-            echo("Erro,já existe uma tarefa com o mesmo nome");   
-			 header("location:index.php"); 
+           echo"<script>alert('Erro,já existe uma tarefa com o mesmo nome!')</script>";	
+		   echo"<script> window.location.href='index.php';</script>";
+		 
         } else {
-            echo "Dados alterados com sucesso";
-            header("location:index.php");   
+           echo"<script>alert('Dados alterados com sucesso')</script>";	
+		   echo"<script> window.location.href='index.php';</script>";
         }
         
     }
@@ -80,6 +83,7 @@
 
         <?php include_once("_incluir/rodape.php"); ?>  
     </body>
+	
 </html>
 
 <?php

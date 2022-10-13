@@ -17,21 +17,25 @@
         $nome       = utf8_decode($_POST["nome"]);
         $custo  = $_POST["custo"];
         $data_lim   = utf8_decode($_POST["data_limite"]);
-          
+        $mod_custo=str_replace(',', '.', $custo);
+		$custo=$mod_custo;
         $inserir     = "INSERT INTO tarefas ";
         $inserir    .= "(nome,custo,data_limite,ordem) ";
         $inserir    .= "VALUES ";
         $inserir    .= "('$nome','$custo','$data_lim','$pos')";
         
         $operacao_inserir = mysqli_query($conecta,$inserir);
-        if(!$operacao_inserir) {
-            echo("Erro, tentativa de inserir tarefa com nome duplicado");
-			 header("location:index.php");
+		$val=false;
+        if(!$operacao_inserir) { 
+		echo"<script>alert('Erro,já existe uma tarefa com o mesmo nome!')</script>";	
+		echo"<script> window.location.href='index.php';</script>";
+		
         }  
 		 else {
-            echo "Dados inseridos com sucesso";
-            header("location:index.php");   
+			echo"<script>alert('Tarefa adicionada com sucesso!')</script>";	
+			echo"<script> window.location.href='index.php';</script>";
         }
+		
     }
 
     
@@ -68,6 +72,7 @@
 
         <?php include_once("_incluir/rodape.php"); ?>  
     </body>
+	
 </html>
 
 <?php
